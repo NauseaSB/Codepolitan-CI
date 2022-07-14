@@ -13,7 +13,7 @@ Sampai saat ini, framework CodeIgniter sudah memasuki versi v4.1.3 yang dibuat u
 
 ## Menggunakan Microsoft Visual Studio Sebagai IDE
 
-Visual Studio Code (disingkat VSCode) adalah perangkat lunak penyunting kode-sumber buatan Microsoft untuk Linux, macOS, dan Windows.[7] Visual Studio Code menyediakan fitur seperti penyorotan sintaksis, penyelesaian kode, kutipan kode, merefaktor kode, pengawakutuan, dan Git. Microsoft merilis sumber kode Visual Studio Code di repositori GitHub dengan lisensi MIT (Code - OSS),[3][8] sedangkan biner yang dibangun oleh Microsoft tidak dirilis dengan lisensi MIT dan merupakan perangkat lunak berpemilik.[5]
+Visual Studio Code (disingkat VSCode) adalah perangkat lunak penyunting kode-sumber buatan Microsoft untuk Linux, macOS, dan Windows. Visual Studio Code menyediakan fitur seperti penyorotan sintaksis, penyelesaian kode, kutipan kode, merefaktor kode, pengawakutuan, dan Git. Microsoft merilis sumber kode Visual Studio Code di repositori GitHub dengan lisensi MIT (Code - OSS),sedangkan biner yang dibangun oleh Microsoft tidak dirilis dengan lisensi MIT dan merupakan perangkat lunak berpemilik.
 
 Visual Studio Code pertama kali diperkenalkan di tanggal 29 April 2015 oleh Microsoft di konferensi Build 2015. Versi pratinjau dirilis tidak lama setelah itu.
 
