@@ -14,14 +14,20 @@ class Blogs extends CI_Controller
     {
         $query = $this->Blog_model->getBlogs(); // mengambil fungsi yang ada dalam model Blog_model
         $data['blogs'] = $query;
+
+        //ketiga load view ini akan menyatukan antara header, footer serta content dari website. sehingga pada bagian header dan footer tidak perlu diubah ubah tiap halamannya
+        $this->load->view('header');
         $this->load->view('blogs', $data);
+        $this->load->view('footer');
     }
 
     public function detail($url)
     {
         $query = $this->Blog_model->getArticle('url', $url); // mengambil fungsi yang ada dalam model Blog_model
         $data['blogs'] = $query->row_array();
+        $this->load->view('header');
         $this->load->view('detail', $data);
+        $this->load->view('footer');
     }
 
     public function formAdd()
@@ -38,13 +44,15 @@ class Blogs extends CI_Controller
             if ($id) {
                 # code...
                 echo 'Data berhasil Disimpan';
+                redirect('/');
             } else {
                 # code...
                 echo 'Data gagal Disimpan';
             }
         }
-
+        $this->load->view('header');
         $this->load->view('formAdd');
+        $this->load->view('footer');
     }
 
     public function formEdit($id)
@@ -61,12 +69,15 @@ class Blogs extends CI_Controller
             if ($id) {
                 # code...
                 echo 'Data berhasil Diupdate';
+                redirect('/');
             } else {
                 # code...
                 echo 'Data gagal Diupdate';
             }
         }
+        $this->load->view('header');
         $this->load->view('formEdit', $data);
+        $this->load->view('footer');
     }
 
     public function delete($id)

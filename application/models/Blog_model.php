@@ -22,7 +22,7 @@ class Blog_model extends CI_Model
         return $this->db->insert_id();
     }
 
-    public function updateBlog($id, $post)
+    public function updateBlog($id, $post) // merupakan method yang akan melakukan update data ke dalam database
     {
         $this->db->where('id', $id);
         $this->db->update('blog', $post);
