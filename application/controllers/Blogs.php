@@ -13,7 +13,7 @@ class Blogs extends CI_Controller
     public function index()
     {
         $query = $this->Blog_model->getBlogs(); // mengambil fungsi yang ada dalam model Blog_model
-        $data['blogs'] = $query->result_array();
+        $data['blogs'] = $query;
         $this->load->view('blogs', $data);
     }
 
