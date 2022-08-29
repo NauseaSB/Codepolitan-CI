@@ -15,20 +15,24 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="com-md-8">
-            <form action="" method="post">
-                <div class="form-group">
-                    <label>Judul</label>
-                    <input class="form-control" type="text" name="title">
-                </div>
-                <div class="form-group">
-                    <label>URL</label>
-                    <input class="form-control" type="text" name="url">
-                </div>
-                <div class="form-group">
-                    <label>Konten</label>
-                    <textarea class="form-control" name="content" cols="30" rows="10"></textarea>
-                </div>
-                <button class="btn btn-primary" type="submit">Simpan</button>
+            <?php echo form_open_multipart(); ?>
+            <div class="form-group">
+                <label>Judul</label>
+                <?php echo form_input('title', null, 'class="form-control"') ?>
+            </div>
+            <div class="form-group">
+                <label>URL</label>
+                <?php echo form_input('url', null, 'class="form-control"') ?>
+            </div>
+            <div class="form-group">
+                <label>Konten</label>
+                <?php echo form_textarea('content', null, 'class="form-control"') ?>
+            </div>
+            <div class="form-group">
+                <label>Cover</label>
+                <?php echo form_upload('cover', null, 'class="form-control"') ?>
+            </div>
+            <button class="btn btn-primary" type="submit">Simpan</button>
             </form>
         </div>
     </div>

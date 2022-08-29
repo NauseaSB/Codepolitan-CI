@@ -5,8 +5,6 @@ class Blogs extends CI_Controller
     public function __construct()
     {
         parent::__construct(); //harus dipanggil ketika membuat class yang extend dari class induk (parent)
-        $this->load->database(); //jika ingin menggunakan database dalam class ini
-        $this->load->helper('url'); //menginclude file helper url
         $this->load->model('Blog_model'); // menginclude model yang dituju
     }
 
@@ -32,11 +30,27 @@ class Blogs extends CI_Controller
 
     public function formAdd()
     {
+
         if ($this->input->post()) { //supaya tidak terjadi error ketika halaman di refresh. dikarenakanan title dan content tidak boleh null.
             // menggunakan method post sehingga hanya dapat melakukan input sekali untuk isian tersebut dan ketika dilakukan refresh, data tidak terus-terusan tersubmit.
             $data['title'] = $this->input->post('title');
             $data['url'] = $this->input->post('url');
             $data['content'] = $this->input->post('content');
+
+            // konfigurasi untuk upload gambar cover
+            $config['upload_path']          = './uploads/';
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 1000;
+            $config['max_width']            = 2000;
+            $config['max_height']           = 1000;
+
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('cover')) {
+                echo $this->upload->display_errors();
+            } else {
+                $data['cover'] = $this->upload->data('file_name');
+            }
 
             $id = $this->Blog_model->insertBlog($data); //proses input data dipindahkan ke dalam model dan disini hanya memanggil method tersebut dan diisikan dengan parameter data yang akan disimpan
 
