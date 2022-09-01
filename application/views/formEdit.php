@@ -15,22 +15,28 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="com-md-8">
-            <form action="" method="post">
-                <div class="form-group">
-                    <label>Judul</label>
-                    <input class="form-control" type="text" name="title" value="<?php echo $blog['title']; ?>">
-                </div>
-                <div class="form-group">
-                    <label>URL</label>
-                    <input class="form-control" type="text" name="url" value="<?php echo $blog['url']; ?>">
-                </div>
-                <div class="form-group">
-                    <label>Konten</label>
-                    <textarea class="form-control" name="content" cols="30" rows="10">
-                <?php echo $blog['content']; ?>
-            </textarea>
-                </div>
-                <button class="btn btn-primary" type="submit">Simpan</button>
+            <div class="alert alert-warning">
+                <?php echo validation_errors(); ?>
+            </div>
+            <?php echo form_open_multipart(); ?>
+            <div class="form-group">
+                <label>Judul</label>
+                <?php echo form_input('title', set_value('title', $blog['title']), 'class="form-control"'); ?>
+            </div>
+            <div class="form-group">
+                <label>URL</label>
+                <?php echo form_input('url', set_value('url', $blog['url']), 'class="form-control"'); ?>
+            </div>
+            <div class="form-group">
+                <label>Konten</label>
+                <?php echo form_textarea('content', set_value('content', $blog['content']), 'class="form-control"'); ?>
+            </div>
+            <div class="form-group">
+                <label>Cover</label>
+                <?php echo form_upload('cover', $blog['cover'], 'class="form-control"'); ?>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Simpan</button>
         </div>
     </div>
 </div>
